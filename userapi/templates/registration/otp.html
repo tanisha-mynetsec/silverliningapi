@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Accounts
+</title>
+</head>
+<body>
+<form action="" method='POST'>{% csrf_token %}
+{{ form.as_p }}
+<br>
+<small>The session will expire in 3 minutes</small>
+<br>
+<br>
+<button type="submit" class="">Verify</button>
+</form>
+</body>
+</html>
+

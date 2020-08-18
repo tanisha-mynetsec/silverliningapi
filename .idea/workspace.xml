@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="88e89f35-d1d8-4969-b1eb-82c172f931d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/disaster/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/disaster/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disaster/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/disaster/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/disaster/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/disaster/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disaster/queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/disaster/queries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disaster/querry.py" beforeDir="false" afterPath="$PROJECT_DIR$/disaster/querry.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disaster/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/disaster/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disaster/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/disaster/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disaster/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/disaster/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail_verification/templates/login_credentials.html" beforeDir="false" afterPath="$PROJECT_DIR$/mail_verification/templates/login_credentials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail_verification/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mail_verification/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/silverlining/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/silverlining/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/silverlining/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/silverlining/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bnN25NvEASEDkSmAe2wRqQUnX5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/accounts" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vk163\Downloads\silverlining\silverlining\disaster" />
+      <recent name="C:\Users\vk163\Downloads\silverlining\silverlining\userapi\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vk163\Downloads\silverlining\silverlining\disaster" />
+      <recent name="C:\Users\vk163\Downloads\silverlining\silverlining\userapi\templates\registration" />
+      <recent name="C:\Users\vk163\Downloads\silverlining\silverlining\userapi\templates" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88e89f35-d1d8-4969-b1eb-82c172f931d9" name="Default Changelist" comment="" />
+      <created>1589263688308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589263688308</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="107" y="194" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591580549335">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="107" y="194" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1591580549335" />
+    <state x="463" y="142" key="FileChooserDialogImpl" timestamp="1591932378363">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="142" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1591932378363" />
+    <state x="391" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1594709709396">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="391" y="211" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1594709709396" />
+  </component>
+</project>
