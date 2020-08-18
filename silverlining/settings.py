@@ -25,7 +25,7 @@ SECRET_KEY = 'cdgorc)2l@(zzaz3o4%837c$3b+xk@!#!x1utvw4!x*953&v0o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['silverliningapi1.herokuapp.com','silverliningapi.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['silverliningapi1.herokuapp.com','silverliningapi.herokuapp.com','127.0.0.1','silverliningapi.azurewebsites.net']
 
 
 # Application definition
