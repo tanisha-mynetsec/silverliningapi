@@ -109,12 +109,15 @@ WSGI_APPLICATION = 'silverlining.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'sql_server.pyodbc',
         'NAME': 'silverlining',                     
         'USER': 'silverlining',                     
         'PASSWORD': 'Welcome@123',              
-        'HOST': 'silverlining.database.windows.net',                     
+        'HOST': 'silverlining.database.windows.net',
         'PORT': '1433',
+        # 'OPTIONS': {
+            # 'driver': 'ODBC Driver 13 for SQL Server'
+        # },
     }
 }
 
