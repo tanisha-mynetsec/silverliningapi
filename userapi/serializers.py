@@ -4,11 +4,13 @@ from userapi import models
 from mail_verification.views import usersignup
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 import requests
+from django.contrib.auth import get_user_model, password_validation
+
 
 
 class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
     """Serializes a user profile object"""
-    
+
     class Meta:
         model = models.UserProfile
         fields = (
@@ -27,7 +29,7 @@ class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
         if value=='1':
             if not self.initial_data.get('phone',''):
                 raise serializers.ValidationError('Phone number is required')
-            return value    
+            return value
         else:
             if not self.initial_data.get('email',''):
                 raise serializers.ValidationError('Email is required')
@@ -73,8 +75,8 @@ class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
         #     request=self.context.get('request')
         #     request.session['phone']= False
         #     usersignup(user)
-            
-        
+
+
 
         return user
 
@@ -88,3 +90,20 @@ class TransactionSerializer(serializers.HyperlinkedModelSerializer):
 class TokenSerializer(AuthTokenSerializer):
     forgot_password=serializers.BooleanField(default=False)
 
+
+class UserLoginSerializer(serializers.Serializer):
+    username = serializers.CharField(max_length=300, required=True)
+    password = serializers.CharField(required=True, write_only=True)
+
+class PasswordChangeSerializer(serializers.Serializer):
+    current_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True)
+
+    def validate_current_password(self, value):
+        if not self.context['request'].user.check_password(value):
+            raise serializers.ValidationError('Current password does not match')
+        return value
+
+    def validate_new_password(self, value):
+        password_validation.validate_password(value)
+        return value

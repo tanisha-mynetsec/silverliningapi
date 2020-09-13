@@ -5,7 +5,9 @@ from userapi import views
 
 
 router = DefaultRouter()
-router.register('profile',views.UserProfileViewSet)
+router.register('profile',views.UsersViewSet)
+# router = router.DefaultRouter(trailing_slash=False)
+router.register('auth', views.AuthViewSet)
 router.register('payment',views.TransactionViewSet)
 
 urlpatterns = [
@@ -14,6 +16,4 @@ urlpatterns = [
     path('',include(router.urls)),
     path('signup/otp/',views.otp_verif_signup,name='otp_signup'),
     path('otp/',views.otp_verification,name='otp_conf'),
-    ##################################
-    # path('accounts/', include('rest_registration.api.urls')),
 ]

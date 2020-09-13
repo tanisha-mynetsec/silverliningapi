@@ -21,6 +21,10 @@ from .forms import *
 
 from rest_framework.decorators import api_view
 from django.shortcuts import redirect,render
+from rest_framework.decorators import action
+from django.contrib.auth import authenticate
+from django.contrib.auth import get_user_model, logout
+
 
 from django.http import JsonResponse
 from mail_verification.views import usersignup
@@ -46,13 +50,13 @@ class UserProfileViewSet(viewsets.ModelViewSet):
         # extracting id of the object and using reverse()
 
         try:
-            flag=self.request.session['phone']    
+            flag=self.request.session['phone']
         except KeyError:
             flag=False
         if flag:
             return Response({'Message': 'OTP Sent', 'session_data': request.session['otp_session_data'],
                              'phone': request.session['phone']})
-    
+
         return Response({'Message':'Account activated'})
 
     # def perform_create(self,serializer):
@@ -174,7 +178,7 @@ class UserLoginApiView(ObtainAuthToken):
             # otp_session_data is stored in session.
             # response_data = {'Message':'Success'}
                 #return redirect('otp_conf')
-            return Response({'token':token.key})    
+            return Response({'token':token.key})
             # return redirect('login')
 
 
@@ -228,3 +232,69 @@ def password_reset_token_created(sender, instance, reset_password_token, *args, 
     email = EmailMessage(email_subject, message, to=[to_email])
     email.send()
     #return Response({'token':reset_password_token.key})
+
+
+def get_and_authenticate_user(email, password):
+    user = authenticate(username=email, password=password)
+    if user is None:
+        raise serializers.ValidationError("Invalid username/password. Please try again!")
+    return user
+
+class AuthViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.UserProfileSerializer
+    queryset = models.UserProfile.objects.all()
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (permissions.UpdateOwnProfile,)
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name','email','phone')
+
+    serializer_classes = {
+        'login': serializers.UserLoginSerializer,
+        'register': serializers.UserProfileSerializer,
+        'password_change': serializers.PasswordChangeSerializer,
+    }
+
+    @action(methods=['POST', ], detail=False)
+    def login(self, request):
+        serializer = serializers.TokenSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        print(serializer.validated_data)
+        user = serializer.validated_data['user']
+        token, created = Token.objects.get_or_create(user=user)
+        request.session['token']=token.key
+        return Response({'token':token.key})
+
+    @action(methods=['POST', ], detail=False)
+    def register(self, request, *args, **kwrgs):
+        response = self.create(request, *args, **kwrgs)
+        print(response)
+        return response
+
+    @action(methods=['POST', ], detail=False)
+    def logout(self, request):
+        logout(request)
+        data = {'success': 'Sucessfully logged out'}
+        return Response(data=data, status=status.HTTP_200_OK)
+
+    # @action(methods=['POST'], detail=False, permission_classes=[IsAuthenticated, ])
+    # def password_change(self, request):
+    #     serializer = self.get_serializer(data=request.data)
+    #     serializer.is_valid(raise_exception=True)
+    #     request.user.set_password(serializer.validated_data['new_password'])
+    #     request.user.save()
+    #     return Response(status=status.HTTP_204_NO_CONTENT)
+
+    # def get_serializer_class(self):
+
+
+        # def post(self, request, format='json'):
+    #     serializer = serializers.UserProfileSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         user = serializer.save()
+    #         if user:
+    #             token = Token.objects.create(user=user)
+    #             json = serializer.data
+    #             json['token'] = token.key
+    #             return Response(json, status=status.HTTP_201_CREATED)
+    #
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
