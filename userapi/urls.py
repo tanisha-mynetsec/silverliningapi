@@ -5,7 +5,8 @@ from userapi import views
 
 
 router = DefaultRouter()
-router.register('profile',views.UsersViewSet)
+
+router.register('profile',views.UserProfileViewSet)
 # router = router.DefaultRouter(trailing_slash=False)
 router.register('auth', views.AuthViewSet)
 router.register('payment',views.TransactionViewSet)
